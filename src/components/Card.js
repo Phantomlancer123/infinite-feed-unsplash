@@ -83,10 +83,11 @@ const ImgCard = styled.div`
   .card .details h2{
    margin: 0;
    padding: 0;
-   font-weight: 600;
-   font-size: 20px;
+   font-weight: 400;
+   font-size: 18px;
    color: #777;
-   text-transform: uppercase;
+   text-overflow: ellipsis;
+   overflow: hidden;
   } 
 
   .card .details h2 span{
@@ -98,7 +99,7 @@ const ImgCard = styled.div`
    } 
 `;
 
-export const Card = ({ url, key, description }) => {
+export const Card = ({ url, key, caption }) => {
   return (
     <ImgCard>
       <div className="card">
@@ -107,7 +108,7 @@ export const Card = ({ url, key, description }) => {
         </div>
         <div className="details">
           <h2>
-            No
+            {caption ? caption : "No Description"}
           </h2>
         </div>
       </div>

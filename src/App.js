@@ -3,6 +3,7 @@ import InfiniteScroll from 'react-infinite-scroll-component';
 import styled from 'styled-components';
 import { getPhotos } from './services/unsplashService';
 import { Card } from './components/Card';
+import { Loading } from './components/Loading';
 import './App.css';
 
 const LandingPage = styled.div`
@@ -43,10 +44,11 @@ function App() {
         dataLength={data.length}
         next={loadPhotos}
         hasMore={true}
+        loader={<Loading />}
       >
         <WrapperCard>
           {data.map(pic => (
-            <Card url={'https://images.unsplash.com/photo-1666346166820-67cc5ccdd678?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNDk3OTh8MHwxfHJhbmRvbXx8fHx8fHx8fDE2Njc5Nzk2NDg&ixlib=rb-4.0.3&q=80&w=400'} key={pic.id} description={pic.alt_description} />
+            <Card url={pic.urls.small} key={pic.id} caption={pic.description} />
           ))}
         </WrapperCard>
       </InfiniteScroll>

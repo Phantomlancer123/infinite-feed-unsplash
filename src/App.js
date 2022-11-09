@@ -2,10 +2,11 @@ import React, { useState, useEffect } from 'react';
 import InfiniteScroll from 'react-infinite-scroll-component';
 import styled from 'styled-components';
 import { getPhotos } from './services/unsplashService';
+import { Card } from './components/Card';
 import './App.css';
 
 const LandingPage = styled.div`
-  margin-top: 10vh;
+  padding: 10vh;
   display: flex;
   justify-content:center;
   align-items: center;
@@ -27,7 +28,7 @@ function App() {
 
   useEffect(() => {
     loadPhotos();
-  }, [])
+  }, []);
 
   const loadPhotos = async () => {
     const result = await getPhotos();
@@ -45,7 +46,7 @@ function App() {
       >
         <WrapperCard>
           {data.map(pic => (
-            <image width='100%' height='20vw' src={pic.urls.small} />
+            <Card url={'https://images.unsplash.com/photo-1666346166820-67cc5ccdd678?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNDk3OTh8MHwxfHJhbmRvbXx8fHx8fHx8fDE2Njc5Nzk2NDg&ixlib=rb-4.0.3&q=80&w=400'} key={pic.id} description={pic.alt_description} />
           ))}
         </WrapperCard>
       </InfiniteScroll>

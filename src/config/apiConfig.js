@@ -1,7 +1,6 @@
 import axios from 'axios';
 
 const configureServices = () => {
-  // Set api call url
   axios.defaults.baseURL = 'https://api.unsplash.com/';
 
   axios.interceptors.request.use(
@@ -27,11 +26,10 @@ const configureServices = () => {
   );
 };
 
-// Gets the api request configuration
 const getConfig = () => {
   const conf = {
     headers: {
-      'Authorization': 'Client-ID ' + '6c446b49b72a4c559d9b9d67183d5c1de1981d16f309063c3b994086e6ce1a26'
+      'Authorization': 'Client-ID ' + '2Djqd7S2m47zNdHEvgReBRCqtNDrx8QBKr1n_PlezWo'
     }
   };
   return conf;

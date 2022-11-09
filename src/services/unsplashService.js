@@ -5,10 +5,10 @@ export const getPhotos = async () => {
     try {
         const config = getConfig();
 
-        const response = await axios.get('photos/random', {
+        const response = await axios.get('https://api.unsplash.com/photos/random', {
             ...config,
             params: {
-                count: 12 // call 12 photos
+                count: 12
             }
         });
         return response.data;

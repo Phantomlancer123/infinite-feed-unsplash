@@ -29,6 +29,7 @@ const configureServices = () => {
 const getConfig = () => {
   const conf = {
     headers: {
+      // eslint-disable-next-line no-useless-concat
       'Authorization': 'Client-ID ' + '6c446b49b72a4c559d9b9d67183d5c1de1981d16f309063c3b994086e6ce1a26'
     }
   };

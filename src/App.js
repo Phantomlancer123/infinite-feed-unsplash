@@ -36,8 +36,6 @@ function App() {
     setData([...data, ...result]);
   }
 
-  console.log("data: ", data);
-
   return (
     <LandingPage>
       <InfiniteScroll
